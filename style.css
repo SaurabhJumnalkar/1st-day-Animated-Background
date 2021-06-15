@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    background-color: #ffffff;
+}
+.scene{
+    position: relative;
+    height:100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background: linear-gradient(#9dd4fd,#a9d7fa,#fff);
+}
+.dark .scene{
+    background: #1d2c3a;
+    
+}
+
+.dark .sun{
+ left:45%;
+ box-shadow: none;
+}
+.sun{
+    position:absolute;
+    top:100px;
+    left:55%;
+    transform:translate(-50%);
+    width:100px;
+    height:100px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #fff;
+    cursor:pointer;
+    transition: 0.2s;
+    z-index: 100;
+}
+.dark .sun::before{
+    content: '';
+    position:absolute;
+    top:-20px;
+    left:20px;
+    width: 100%;
+    height: 100%;
+    background: #1d2c3a;
+    border-radius: 50%;
+   
+}
+.bg{
+    position:absolute;
+    top: 150px;
+    width: 100%;
+    height: 780px;
+    background:url(pngegg.png);
+    z-index:2;
+    background-size: 750px;
+    background-repeat: repeat-x;
+    animation: animatedbg 29s linear infinite;
+}
+@keyframes animatedbg{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x:-750px ;
+    }
+}
+body::-webkit-scrollbar{
+    width: 2px;
+}
+body::-webkit-scrollbar-track{
+    background: black;
+}
+body::-webkit-scrollbar-thumb{
+    background: rgb(118, 216, 233);
+}
+
+.plane1{
+    position: absolute;
+    top: 20px;
+    max-width: 150px;
+    background: none;
+    right: 0px;
+    z-index: 5;
+    animation: plane1 17s linear infinite;
+}
+@keyframes plane1{
+    0%{
+        transform: translate(100px);
+    }
+    100%{
+        transform: translate(calc(-2300px));
+    }
+}
+.car1{
+    position: absolute;
+    bottom: 20px;
+    max-width: 150px;
+    background: none;
+    left: 0px;
+    z-index: 5;
+    animation: car1 29s linear infinite;
+}
+@keyframes car1{
+    0%{
+        transform: translate(-100px);
+    }
+    100%{
+        transform: translate(calc(1500px));
+    }
+}
+.Note{
+    z-index: 200;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    left: 40%;
+    right: 40%;
+    
+}
